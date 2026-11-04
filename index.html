@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FoodVerse — discover global flavours and order your favourites.">
+  <title>FoodVerse | Taste the World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/data.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+  <div class="announcement"><span>✦</span> Free delivery on your first order over ₹499 <a href="#menu">Explore menu</a></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="FoodVerse home"><span class="brand-mark">F</span><span>food<span class="brand-accent">verse</span></span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#home" class="nav-link active">Home</a><a href="#menu" class="nav-link">Explore menu</a><a href="#how-it-works" class="nav-link">How it works</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button favorites-shortcut" id="favoritesShortcut" aria-label="Open favorites" title="Favorites">♡</button>
+      <button class="account-button" id="accountButton"><span class="account-icon">♙</span><span id="accountLabel">Sign in</span></button>
+      <button class="cart-button" id="openCart" aria-label="Open cart">Bag <span class="cart-badge" id="cartCount">0</span></button>
+      <button class="mobile-menu-button" id="mobileMenuButton" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav"><a href="#home">Home</a><a href="#menu">Explore menu</a><a href="#how-it-works">How it works</a></nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> A world of flavour, one table</div>
+        <h1>Your next<br><em>craving</em> is calling.</h1>
+        <p>From comforting classics to exciting discoveries, explore handpicked dishes from kitchens around the world.</p>
+        <div class="hero-actions"><a class="primary-button" href="#menu">Explore dishes <span>↗</span></a><a class="text-button" href="#how-it-works">How it works <span>→</span></a></div>
+        <div class="hero-proof"><div class="avatar-stack"><span>👩🏽</span><span>👨🏻</span><span>👩🏼</span><span>👨🏾</span></div><div><strong>Made for curious appetites</strong><small>Discover something delicious today</small></div></div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <div class="hero-food-card"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85" alt="Colourful fresh meal bowl"><div class="floating-label label-top"><span>✦</span> Freshly picked</div><div class="floating-label label-bottom"><span class="rating-star">★</span> 4.9 <small>community favourite</small></div></div>
+        <div class="hero-sticker">GOOD<br>FOOD<br><span>GOOD MOOD</span></div>
+        <div class="hero-sparkle sparkle-one">✳</div><div class="hero-sparkle sparkle-two">✦</div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><strong>28+</strong><span>signature dishes</span></div><i></i><div><strong>7</strong><span>cuisines to explore</span></div><i></i><div><strong>Fresh</strong><span>flavours, every day</span></div><i></i><div><strong>Easy</strong><span>ordering experience</span></div>
+    </section>
+
+    <section class="section menu-section" id="menu">
+      <div class="section-heading">
+        <div><div class="eyebrow">THE FOODVERSE COLLECTION</div><h2>Find your <em>flavour.</em></h2><p>Good food has no borders. Pick a mood, find a dish, make it yours.</p></div>
+        <button class="clear-filters" id="clearFilters">Reset filters ↺</button>
+      </div>
+      <div class="menu-toolbar">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search dishes, ingredients or cuisine..." autocomplete="off"><kbd>⌘ K</kbd></label>
+        <label class="sort-control"><span>Sort by</span><select id="sortSelect"><option value="recommended">Recommended</option><option value="rating">Top rated</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option></select></label>
+      </div>
+      <div class="filter-row" id="cuisineFilters" aria-label="Cuisine filters"></div>
+      <div class="filter-options">
+        <label class="check-filter"><input type="checkbox" id="vegOnly"><span class="fake-check"></span> Vegetarian only</label>
+        <label class="check-filter"><input type="checkbox" id="under500"><span class="fake-check"></span> Under ₹500</label>
+        <span class="result-count" id="resultCount">Showing all dishes</span>
+      </div>
+      <div class="menu-grid" id="menuGrid" aria-live="polite"></div>
+      <div class="empty-state hidden" id="emptyState"><div>🥢</div><h3>No dishes found</h3><p>Try another search or clear your filters.</p><button class="secondary-button" id="emptyReset">Clear filters</button></div>
+    </section>
+
+    <section class="feature-band" id="how-it-works">
+      <div class="feature-band-heading"><div class="eyebrow">A BETTER WAY TO DISCOVER</div><h2>Thoughtful food.<br><em>Effortless ordering.</em></h2><p>Everything you need to find your next favourite, all in one place.</p></div>
+      <div class="feature-list">
+        <article><span class="feature-number">01</span><div><h3>Explore globally</h3><p>Browse a curated mix of iconic dishes and cuisines from around the world.</p></div><span class="feature-icon">◎</span></article>
+        <article><span class="feature-number">02</span><div><h3>Make it yours</h3><p>Save favourites, customise quantities and keep your basket organised.</p></div><span class="feature-icon">♡</span></article>
+        <article><span class="feature-number">03</span><div><h3>Checkout with ease</h3><p>Review your order, add delivery details and get a clear price breakdown.</p></div><span class="feature-icon">↗</span></article>
+      </div>
+    </section>
+
+    <section class="newsletter section">
+      <div><div class="eyebrow">A LITTLE SOMETHING DELICIOUS</div><h2>Good things are<br><em>on the menu.</em></h2><p>Get occasional updates about new dishes and food discoveries.</p></div>
+      <form id="newsletterForm" class="newsletter-form"><label for="newsletterEmail">Your email address</label><div><input type="email" id="newsletterEmail" placeholder="you@example.com" required><button class="primary-button" type="submit">Keep me posted ↗</button></div><small>No spam. Just good food inspiration.</small></form>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">F</span><span>food<span class="brand-accent">verse</span></span></a><p>A little closer to the flavours you love.</p><div class="footer-links"><a href="#menu">Menu</a><a href="#how-it-works">About</a><a href="mailto:hello@foodverse.example">Contact</a></div><small>© <span id="year"></span> FoodVerse. Demo storefront experience.</small></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer cart-drawer" id="cartDrawer" aria-label="Shopping bag" aria-hidden="true">
+    <div class="drawer-header"><div><span class="eyebrow">YOUR SELECTION</span><h2>Your bag <span id="drawerCount">(0)</span></h2></div><button class="close-button" data-close aria-label="Close cart">×</button></div>
+    <div class="drawer-content" id="cartContents"></div>
+    <div class="cart-summary" id="cartSummary"></div>
+  </aside>
+  <aside class="drawer favorites-drawer" id="favoritesDrawer" aria-label="Saved favourites" aria-hidden="true">
+    <div class="drawer-header"><div><span class="eyebrow">SAVED FOR LATER</span><h2>Your favourites</h2></div><button class="close-button" data-close aria-label="Close favourites">×</button></div>
+    <div class="drawer-content" id="favoritesContents"></div>
+  </aside>
+
+  <div class="modal-wrap" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal auth-modal"><button class="close-button modal-close" data-close aria-label="Close">×</button><div class="modal-mark">F</div><div class="eyebrow">WELCOME TO FOODVERSE</div><h2 id="authTitle">Good to see you.</h2><p class="modal-intro">Sign in to keep your favourites and order details together.</p>
+      <div class="auth-tabs"><button class="active" data-auth-tab="login">Sign in</button><button data-auth-tab="signup">Create account</button></div>
+      <form id="authForm"><div class="form-field hidden" id="nameField"><label for="authName">Your name</label><input id="authName" name="name" autocomplete="name" placeholder="Full name"></div><div class="form-field"><label for="authEmail">Email address</label><input id="authEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div><div class="form-field"><label for="authPassword">Password</label><input id="authPassword" name="password" type="password" minlength="6" autocomplete="current-password" placeholder="At least 6 characters" required></div><button class="primary-button full-button" type="submit" id="authSubmit">Sign in ↗</button></form>
+      <small class="demo-note">Demo only: account details stay in this browser. Do not use a real password.</small>
+    </div>
+  </div>
+
+  <div class="modal-wrap" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <div class="modal checkout-modal"><button class="close-button modal-close" data-close aria-label="Close">×</button><div class="eyebrow">ALMOST THERE</div><h2 id="checkoutTitle">Delivery details</h2><p class="modal-intro">Where should we send your delicious choices?</p>
+      <form id="checkoutForm"><div class="form-field"><label for="deliveryName">Full name</label><input id="deliveryName" required placeholder="Your name"></div><div class="form-field"><label for="deliveryPhone">Phone number</label><input id="deliveryPhone" type="tel" pattern="[0-9+() -]{8,15}" required placeholder="+91 98765 43210"></div><div class="form-field"><label for="deliveryAddress">Delivery address</label><textarea id="deliveryAddress" rows="3" required placeholder="House / flat, street, area, city, PIN code"></textarea></div><div class="form-field"><label for="deliveryInstructions">Delivery instructions <span>(optional)</span></label><input id="deliveryInstructions" placeholder="Landmark, gate code, etc."></div><div class="payment-note"><span>◈</span><div><strong>Payment on delivery</strong><small>This prototype does not collect payment details.</small></div></div><div id="checkoutTotal" class="checkout-total"></div><button class="primary-button full-button" type="submit">Place demo order ↗</button></form>
+    </div>
+  </div>
+
+  <div class="modal-wrap" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+    <div class="modal order-success"><div class="success-icon">✓</div><div class="eyebrow">ORDER CONFIRMED</div><h2 id="orderTitle">That’s a wrap!</h2><p id="orderMessage">Your demo order has been placed.</p><div class="order-reference" id="orderReference"></div><button class="primary-button full-button" id="finishOrder">Continue exploring ↗</button></div>
+  </div>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+</body>
+</html>
